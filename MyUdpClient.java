@@ -36,7 +36,7 @@ class MyUdpClient {
 
     String modifiedSentence;
 
-    while(true){
+    while (true) {
       System.out.println("Type a Sentence");
       sentence = inFromUser.readLine();
 
@@ -47,6 +47,7 @@ class MyUdpClient {
       sendPacket = new DatagramPacket(sendData, sendData.length, ipAddress, 9876);
 
       clientSocket.send(sendPacket);
+      System.out.println("FROM CLIENT: " + sentence);
 
       receivePacket = new DatagramPacket(receiveData, receiveData.length);
 
@@ -54,9 +55,9 @@ class MyUdpClient {
 
       modifiedSentence = new String(receivePacket.getData());
 
-      System.out.println("FROM SERVER:" + modifiedSentence);
+      System.out.println("FROM SERVER: " + modifiedSentence);
 
-      if(sentence.equals("Goodbye")) {
+      if (sentence.equals("Goodbye")) {
         break;
       }
     }
