@@ -31,7 +31,7 @@ class MyUdpClient {
     byte[] sendData;
     byte[] receiveData;
 
-    DatagramPacket sendPacket;
+    DatagramPacket sendPacket; 
     DatagramPacket receivePacket;
 
     String modifiedSentence;
